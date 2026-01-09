@@ -7,6 +7,12 @@ terraform {
             version = ">= 4.0.0"
         }
     }
+
+
+    backend "gcs" {
+        bucket = "tf-state-data-project-1261"
+        prefix = "terraform/state"
+    }
 }
 
 provider "google" {
