@@ -1,0 +1,50 @@
+[
+    {
+        "name": "transaction_id",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "id único de la transacción"
+    },
+    {
+        "name": "date_time",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": "fecha y hora de la venta"
+    },
+    {
+        "name": "customer_id",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "id del cliente"
+    },
+    {
+        "name": "product_id",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "ASIN del producto (Llave foránea)"
+    },
+    {
+        "name": "quantity",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Cantidad de unidades vendidas"
+    },
+    {
+        "name": "unit_price",
+        "type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Precio unitario"
+    },
+    {
+        "name": "total_amount",
+        "type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Monto total de la transacción"
+    },
+    {
+        "name": "payment_method",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Método de pago"
+    }
+]
