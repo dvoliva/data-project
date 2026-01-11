@@ -7,13 +7,32 @@
 
 # Python
 venv/
+.venv/
 __pycache__/
 *.py[cod]
 *$py.class
 .env
+.env.*
+
+# datos
+**/data/*.json
+**/data/*.csv
+!**/data/.gitkeep
+mock_api/src/data/*
+!mock_api/src/data/.gitkeep
+
+# UV (Python package manager)
+
+
+# dbt
+target/
+dbt_packages/
+logs/
+dbt_modules/
 
 # Credenciales
-*.json
+#*.json
+#!infra/schemas/*.json
 credentials/
 secrets/
 *.pem
