@@ -1,15 +1,18 @@
 from pydantic import BaseModel, Field
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 class Review(BaseModel):
-    review_id: int 
-    product_id: int 
-    user_id: int 
-    rating: int  
-    review_date: str
+    review_id: str
+    reviewer_id: str
+    asin: str  # product_id en Amazon
+    reviewer_name: Optional[str] = None
+    helpful: List[int] = Field(default_factory=lambda: [0, 0])  # [votos útiles, votos totales]
     review_text: str
+    overall: float  # rating 1-5
     summary: Optional[str] = None
+    unix_review_time: int
+    review_time: str
 
 class SalesTransaction(BaseModel):
     transaction_id: str = Field(
