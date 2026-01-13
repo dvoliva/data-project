@@ -1,0 +1,44 @@
+[
+  {
+    "name": "review_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "ID único del review"
+  },
+  {
+    "name": "product_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "ASIN del producto comentado"
+  },
+  {
+    "name": "user_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "ID del usuario que comenta"
+  },
+  {
+    "name": "rating",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Calificación numérica (1-5)"
+  },
+  {
+    "name": "review_date",
+    "type": "DATE",
+    "mode": "NULLABLE",
+    "description": "Fecha del comentario"
+  },
+  {
+    "name": "review_text",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Texto completo del comentario"
+  },
+  {
+    "name": "summary",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Resumen o título del comentario"
+  }
+]
