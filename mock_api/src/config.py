@@ -6,7 +6,7 @@ CURRENT_FILE = Path(__file__).resolve()
 SRC_DIR = CURRENT_FILE.parent
 PROJECT_ROOT = SRC_DIR.parent
 DATA_DIR = PROJECT_ROOT / "data"
-REVIEWS_FILE = PROJECT_ROOT / "amazon_reviews.json"
+REVIEWS_FILE_PATH = PROJECT_ROOT / "src/data/amazon_reviews.json"
 
 # app confg
 API_TITLE = "Mock Amazon Reviews API"

@@ -14,20 +14,23 @@ class SalesGenerator:
     def __init__(self):
         
         self.faker = Faker(FAKER_LOCALE)
-        self.products_id = self._load_product_ids()
-        print(f"productos cargados: {len(self.products_id)}")
+        self.product_ids = self._load_product_ids()
+        print(f"productos cargados: {len(self.product_ids)}")
     
     def _load_product_ids(self) -> List[str]:
         """
-        lee archivo json de reviews y solo extrae IDs
+        lee archivo JSON Lines de reviews y solo extrae IDs únicos (ASIN)
         """
         if not REVIEWS_FILE_PATH.exists():
             raise FileNotFoundError(f"El archivo {REVIEWS_FILE_PATH} no existe.")
     
+        unique_ids = set()
         with open(REVIEWS_FILE_PATH, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            unique_ids = list(set(item['product_id'] for item in data))
-            return unique_ids
+            for line in f:
+                if line.strip():  # ignorar líneas vacías
+                    item = json.loads(line)
+                    unique_ids.add(item['asin'])  # 'asin' es el product_id en este dataset
+        return list(unique_ids)
     
     def generate_sales(self, num_sales: int) -> List[SalesTransaction]:
         """
